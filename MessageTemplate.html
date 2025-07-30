@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    color: #e6b800;
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  p {
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .indent-line {
+    padding-left: 40px;
+  }
+  b, strong {
+      font-weight: bold;
+  }
+  .session-details {
+    margin-bottom: 20px; /* Space between each session block */
+    border-left: 3px solid #007bff; /* A little visual cue for each session */
+    padding-left: 10px;
+  }
+</style>
+
+</head>
+<body>
+
+  <h1><b>Week-<?= week ?> ARM Invitation</b></h1><br>
+
+  <p>Hello @everyone,</p><br>
+
+  <p>We’re excited to invite you to your Week-<?= week ?> Action Review Meeting, where we’ll discuss key updates and action points for the week.</p><br>
+
+  <p>📅 <b>Session Details:</b></p><br>
+
+  <? for (var i = 0; i < sessionsData.length; i++) { ?>
+    <div class="session-details">
+      <p class="indent-line"><b>&emsp;&emsp;Session <?= sessionsData[i].sessionNumber ?>:</b> <?= internshipName ?> - Action Review Meeting - Week <?= week ?> - Room <?= sessionsData[i].sessionNumber ?></p>
+      <p class="indent-line"><b>&emsp;&emsp;Date & Time:</b> <?= sessionsData[i].dateTime ?></p>
+      <p class="indent-line"><b>&emsp;&emsp;Meeting Link:</b> <a href="<?= sessionsData[i].meetingLink ?>" target="_blank"><?= sessionsData[i].meetingLink ?></a></p>
+    </div>
+    <? if (i < sessionsData.length - 1) { ?><br><? } ?>
+  <? } ?>
+  <br>
+
+  <p>📋 <b>Note:</b></p><br>
+  <p class="indent-line">&emsp;&emsp;• Join the meeting link which has been assigned to you through email invitation. In case, you’re unable to understand then attend any of the sessions.</p>
+  <p class="indent-line">&emsp;&emsp;• Your attendance is crucial as we’ll cover important information to help you stay on track. Please mark your calendars accordingly.</p><br>
+  <p>Looking forward to your participation!</p><br>
+
+  <p>Best regards,</p><br>
+
+  <p><b><?= name ?></b><br>
+  Talent Discovery Team<br>
+  <b>Excelerate</b></p>
+
+</body>
+</html>
